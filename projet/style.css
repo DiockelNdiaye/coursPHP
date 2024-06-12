@@ -1,0 +1,86 @@
+.sidebar {
+  position: absolute;
+  background-color: grey;
+  width: 250px;
+  height: 100vh;
+}
+
+.sidebar .nav-link.active {
+  color: white; /* Couleur du texte de l'élément actif dans la barre latérale */
+  text-decoration: none; /* Supprimez le soulignement initial */
+  position: relative; /* Pour positionner le soulignement */
+}
+
+.sidebar .nav-link.active::before {
+  content: ""; /* Ajoutez un pseudo-élément pour le soulignement */
+  position: absolute;
+  left: 0;
+  bottom: 0; /* Ajustez la position verticale du soulignement selon vos besoins */
+  width: 100%;
+  height: 2px;
+  background-color: white; /* Couleur du soulignement */
+  transition: width 0.3s ease; /* Ajoutez une transition pour l'animation */
+}
+
+.sidebar .nav-link.active:hover::before {
+  width: 100%; /* Étendez le soulignement sur toute la largeur lors du survol */
+}
+
+.container {
+  margin-left: 260px;
+  width: 1090px;
+}
+
+body {
+  background-color: whitesmoke;
+}
+
+.form {
+  background-color: white;
+  padding: 40px;
+  margin-top: 20px;
+}
+
+.fwbold {
+  font-weight: normal;
+  position: relative;
+  color: white;
+}
+
+.fwbold:hover {
+  font-weight: bold;
+  color: white;
+}
+
+.fwbold::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%; /* Pour étendre la ligne sur toute la largeur du titre */
+  height: 3px;
+  background-color: white;
+  transform: scaleX(0); /* Commencez avec une largeur de zéro */
+  transition: transform 0.3s ease; /* Ajoutez une transition pour l'animation */
+}
+
+.fwbold:hover::after {
+  transform: scaleX(
+    1
+  ); /* Étendre la ligne sur toute la largeur lors du survol */
+}
+
+.card {
+  /* Styles de base */
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.card:hover {
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transform: scale(1.05);
+}
+.footer {
+  width: max-content;
+  z-index: -1;
+}
